@@ -19,7 +19,7 @@ public class CardTest {
     }
     @Test
     void shouldSubmitRequest(){
-        SelenideElement form = $("[data-test-id=card-form]");
+        SelenideElement form = $("[data-test-id=form.form]");
         
         form.$("[data-test-id=name] input").setValue("Петров Иван");
         form.$("[data-test-id=phone] input").setValue("+79999999999");
@@ -29,4 +29,5 @@ public class CardTest {
 
 
     }
+
 }
