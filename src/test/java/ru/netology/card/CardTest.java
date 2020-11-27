@@ -1,7 +1,5 @@
 package ru.netology.card;
 
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,8 +7,13 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CardTest {
+    @BeforeAll
+    static void setUpAll() {
+        System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver");
+    }
 
 
     @BeforeEach
@@ -30,4 +33,5 @@ public class CardTest {
 
 }
 }
+
 
