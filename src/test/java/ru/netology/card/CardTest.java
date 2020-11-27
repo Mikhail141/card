@@ -17,17 +17,17 @@ public class CardTest {
     void setUp(){
         open("http://localhost:9999");
     }
+
     @Test
-    void shouldSubmitRequest(){
-        SelenideElement form = $("[data-test-id=form.form]");
-        
-        form.$("[data-test-id=name] input").setValue("Петров Иван");
-        form.$("[data-test-id=phone] input").setValue("+79999999999");
-        form.$("[data-test-id=agreement]").click();
-        form.$("[data-test-id=submit]").click();
-        $("[data-test -id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена"));
+    void shouldRequest(){
+       $("[data-test-id=name] input").setValue("Петров Иван");
+       $("[data-test-id=phone] input").setValue("+79999999999");
+       $("[data-test-id=agreement]").click();
+       $("button").click();
+       $("[data-test-id=order-success]").shouldHave(exactText(" Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
 
 
-    }
 
 }
+}
+
